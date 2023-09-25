@@ -12,11 +12,16 @@ import './style.scss';
 //callstack에 있는 메모리에는 배열의 값 자체가 담기는게 아닌 힙메모리에 있는 값의 위치값이 담김
 //참조링크가 담겨있는 변수를 새로운 변수에 옮겨담으면 값이 복사되는 것이 참조링크만 복사됨
 //결국 같은 값을 가리키고 있는 두개의 링크만 복사가됨
-//복사가된 링크의 값을 바꾸면 결국 원본값이 회손됨 (shallow copy)
+//복사가된 링크의 값을 바꾸면 결국 원본값이 회손됨 (shallow copy) 불변성 유지 안됨
+
+//리액트 개발시 불변성이 중요한 이유
+//리액트는 원본이 있어야 본사본을 통해서 차이점을 비교분석
+//리액트안에서 배열이나, 객체같은 참조형 자료는 무조건 deep copy를 해서 데이터를 변경해야됨
 
 function App() {
 	let arr = ['reading', 'game', 'cook'];
-	let newArr = arr;
+	//전개연산자 (Spread Operator): heap메모리에 있는 값을 물리적으로 꺼내서 전개
+	let newArr = [...arr];
 	newArr[0] = 'exercise';
 	console.log(newArr);
 	console.log(arr);
