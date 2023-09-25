@@ -1,5 +1,17 @@
+import Popup from './components/Popup';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import './style.scss';
+
 function App() {
-	return <h1>Hello</h1>;
+	let isPop = true;
+	return (
+		<>
+			<Header />
+			<Footer />
+			{isPop ? <Popup /> : null}
+		</>
+	);
 }
 
 export default App;
@@ -27,4 +39,15 @@ export default App;
 	Virtual DOM (가상돔)
 	- 브라우저에 의해 Real DOM으로 변경되기 전 자바스크립트에 의해서 메모리상으로 가상의 DOM을
 	만들어서 기존의 DOM구조와 차이점을 분석하고 바뀐 부분을 다시 랜더링하는 형태
+
+	JSX
+	-리엑트에 DOM을 효율적으로 생성하기 위한 HTML의 규칙성을 따라한 자바스크립트 돔 데닥 방식
+
+	컴포넌트 생성시 주의점
+	- 무조건 JSX를 리턴
+	- 함수 이름은 대문자로 시작
+	- export로 내보내야지 다른 컴포넌트에서 불러올수 있음
+	- 하나의 컴포넌트 함수는 단인 JSX를 리턴 가능
+	- 복수개의 JSX를 리턴하고 싶을때는 wrapping El로 묶어서 그룹화한뒤 리턴
+	- 중첩된 Element노드를 생성하지 않고 복수개의 JSX를 리턴하고 싶을때는 <></> Fragment로 감싸줌
 */
