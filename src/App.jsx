@@ -1,15 +1,18 @@
-import Popup from './components/Popup';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Popup from './components/Popup';
+import List from './components/List';
 import './style.scss';
 
 function App() {
 	let isPop = true;
+	let isFooter = true;
 	return (
 		<>
 			<Header />
-			<Footer />
+			{isFooter && <Footer />}
 			{isPop ? <Popup /> : null}
+			<List />
 		</>
 	);
 }
