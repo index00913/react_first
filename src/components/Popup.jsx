@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 function Popup() {
-	const [Num, setNum] = useState(useState);
+	const [Num, setNum] = useState(0);
 	useEffect(() => {
 		//컴포넌트가 mount시 한번만 실행
 		console.log('popup 생성');
@@ -11,6 +11,10 @@ function Popup() {
 			console.log('popup소멸');
 		};
 	}, []);
+
+	useEffect(() => {
+		console.log('popup Num 상태변화');
+	}, [Num]);
 
 	return (
 		<aside>
