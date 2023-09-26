@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 //의존성배열이 비어있는 상태에서 함수안쪽에 구문을 입력하면 (컴포넌트 마운트시 한번만 실행)
 //실사용 사례 - 팝업생성시 그크롤바 제거]
 //실사용 사례 - 특정 컴포넌트가 마운트 되었을 때에만 스크롤 이벤트 연결
+//실사용 사례 - 무거운 외부 데이터를 fetching 할때
 
 //의존성배열이 비어있는 상태에서 리턴되는 함수 안쪽에 구문을 입력하면 (컴포넌트 언마운트시 한번만 실행)
 //실사용 사례 - 팝업제거시 스크롤바 생성
@@ -14,6 +15,8 @@ import { useEffect, useState } from 'react';
 //실사용 사례 - 특정 이벤트가 발생해서 새로운 데이터를 fetching할 때마다 로딩바 출력
 
 function Popup() {
+	console.log('팝업재호출');
+	console.log('무거운 ');
 	const [Num, setNum] = useState(0);
 	useEffect(() => {
 		//컴포넌트가 mount시 한번만 실행
