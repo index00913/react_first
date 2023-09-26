@@ -1,4 +1,5 @@
-export default function Popup() {
-	<aside>Popup</aside>;
-	return <div></div>;
+function Popup() {
+	return <aside>Popup</aside>;
 }
+
+export default Popup;
